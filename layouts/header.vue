@@ -1,22 +1,28 @@
 <script setup lang='ts'>
+import CurrentTime from '~/components/CurrentTime.vue';
+
 const isOpen = ref(false);
 </script>
 
 <template>
 	<div class="h-[60px] text-textColor-default p-4 pb-2">
-		<UButton
-			color="gray"
-			variant="solid"
-			class="w-[32px] h-[32px] justify-center items-center"
-			square
-			@click="isOpen = true"
-		>
-			<UIcon
-				class="w-[18px] h-[18px]"
-				name="charm:menu-hamburger"
-				dynamic
-			/>
-		</UButton>
+		<div class="flex items-center justify-between">
+			<UButton
+				color="gray"
+				variant="solid"
+				class="w-[32px] h-[32px] justify-center items-center"
+				square
+				@click="isOpen = true"
+			>
+				<UIcon
+					class="w-[18px] h-[18px]"
+					name="charm:menu-hamburger"
+					dynamic
+				/>
+			</UButton>
+
+			<CurrentTime />
+		</div>
 
 		<USlideover
 			v-model="isOpen"
