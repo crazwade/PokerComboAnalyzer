@@ -5,7 +5,7 @@ const userStore = useUserStore();
 </script>
 
 <template>
-	<div class="text-textColor-mark text-sm">
+	<div class="text-textColor-mark text-sm font-mono">
 		{{ userStore.currentTime }}
 	</div>
 </template>
