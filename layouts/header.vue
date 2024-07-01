@@ -2,6 +2,18 @@
 import CurrentTime from '~/components/CurrentTime.vue';
 
 const isOpen = ref(false);
+
+const router = useRouter();
+
+enum routeName {
+	index = '首頁',
+	test = '測試頁',
+}
+
+enum routeIcon {
+	index = 'material-symbols:other-houses',
+	test = 'material-symbols:person-rounded',
+}
 </script>
 
 <template>
@@ -39,7 +51,25 @@ const isOpen = ref(false);
 					padded
 					@click="isOpen = false"
 				/>
-				<Placeholder class="h-full" />
+				<div class="mt-[44px] flex flex-col gap-2">
+					<template
+						v-for="(route) in router.options.routes"
+						:key="route.name"
+					>
+						<div class="w-fit flex items-center gap-2 font-mono hover:text-textColor-link">
+							<UIcon
+								:name="routeIcon[route.name as keyof typeof routeName]"
+								dynamic
+							/>
+							<NuxtLink
+								:to="`/${String(route.name === 'index' ? '' : route.name)}`"
+								@click="isOpen = false"
+							>
+								{{ routeName[route.name as keyof typeof routeName] }}
+							</NuxtLink>
+						</div>
+					</template>
+				</div>
 			</div>
 		</USlideover>
 	</div>
