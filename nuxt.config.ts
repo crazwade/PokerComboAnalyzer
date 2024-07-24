@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 
 export default defineNuxtConfig({
 	devtools: { enabled: true },
-	modules: ['@pinia/nuxt', '@nuxt/eslint', '@nuxt/ui'],
+	modules: ['@pinia/nuxt', '@nuxt/eslint', '@nuxt/ui', '@nuxt/image'],
 	pinia: {
 		storesDirs: ['./stores/**', './custom-folder/stores/**'],
 	},
