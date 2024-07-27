@@ -7,12 +7,12 @@ const router = useRouter();
 
 enum routeName {
 	index = '首頁',
-	test = '測試頁',
+	aboutme = '介紹我',
 }
 
 enum routeIcon {
 	index = 'material-symbols:other-houses',
-	test = 'material-symbols:person-rounded',
+	aboutme = 'material-symbols:person-rounded',
 }
 </script>
 
