@@ -60,6 +60,7 @@ onMounted(() => {
 		<div class="flex gap-2 w-full justify-center items-center">
 			<UButton
 				:label="isAllFlip ? '全部蓋上' : '全部翻開'"
+				:disabled="isFlipping"
 				@click="flipAll"
 			/>
 		</div>
