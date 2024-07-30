@@ -1,5 +1,6 @@
 <script setup lang='ts'>
 import CardItem from '../CardItem.vue';
+import LoadingAni from '../LoadingAni.vue';
 import { usePokerStore } from '@/stores/usePoker.js';
 
 const pokerStore = usePokerStore();
@@ -62,12 +63,13 @@ onMounted(() => {
 				@click="flipAll"
 			/>
 		</div>
-		<div class="grid gap-x-2 gap-y-2 w-full grid-cols-[repeat(auto-fill,80px)] justify-center">
+		<div class="relative grid gap-x-2 gap-y-2 w-full grid-cols-[repeat(auto-fill,80px)] justify-center py-5">
 			<template
 				v-for="(card, index) in pokerStore.displayPool"
 				:key="index"
 			>
 				<CardItem
+					:is-flipping="isFlipping"
 					:index="card.index"
 					:number="card.number"
 					:is-flip="card.isFlip"
@@ -75,9 +77,16 @@ onMounted(() => {
 					@recover="recover"
 				/>
 			</template>
+			<div
+				v-if="isFlipping"
+				class="absolute top-0 left-0 h-full w-full bg-gray-500 opacity-60 flex justify-center items-center"
+			>
+				<LoadingAni />
+			</div>
 		</div>
 	</div>
 </template>
 
 <style lang="scss" scoped>
+
 </style>

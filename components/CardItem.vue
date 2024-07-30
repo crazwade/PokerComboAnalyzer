@@ -13,11 +13,20 @@ const props = defineProps<{
 	index?: number;
 	number: number;
 	isFlip: boolean;
+	isFlipping: boolean;
 }>();
 
 const recover = () => {
 	selected.value = false;
 	emit('recover', props.index!);
+};
+
+const flip = () => {
+	if (props.isFlipping) {
+		return;
+	}
+
+	selected.value = true;
 };
 </script>
 
@@ -30,7 +39,7 @@ const recover = () => {
 		<div
 			v-if="!selected"
 			class="card_wrap"
-			@click="selected = true"
+			@click="flip"
 		>
 			<div
 				class="card"
