@@ -38,7 +38,7 @@ const flip = () => {
 	>
 		<div
 			v-if="!selected"
-			class="card_wrap"
+			class="card_wrap w-[45px] h-[70px] md:w-[80px] md:h-[120px]"
 			@click="flip"
 		>
 			<div
@@ -48,13 +48,11 @@ const flip = () => {
 				<NuxtImg
 					src="/image/poker/pokerBack.webp"
 					fit="contain"
-					width="80"
 					class="card_item front"
 				/>
 				<NuxtImg
 					:src="`/image/poker/${number}.webp`"
 					fit="contain"
-					width="80"
 					class="card_item back"
 				/>
 			</div>
@@ -76,7 +74,6 @@ const flip = () => {
 			<NuxtImg
 				:src="`/image/poker/${number}.webp`"
 				fit="contain"
-				width="80"
 				style="width: 100%; height: 100%"
 				@click="modalVisible = true"
 			/>
@@ -92,8 +89,8 @@ const flip = () => {
 <style lang="scss" scoped>
 .card_wrap {
 	display: inline-block;
-	width: 80px;
-	height: 120px;
+	// width: 80px;
+	// height: 120px;
 	box-sizing: border-box;
 	&.selected {
 		border: 1px solid red;

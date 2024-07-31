@@ -38,19 +38,24 @@ const flop = () => {
 			/>
 		</div>
 		<div
-			class="flex justify-center items-center overflow-hidden cardpool border-2 pt-10 pb-5"
+			class="flex justify-center items-center cardpool border-2 pt-10 pb-5"
 			:class="[isSpreadOut ? 'w-full' : 'w-[80px]']"
 		>
 			<div class="absolute top-14 left-1/2 -translate-x-1/2">
 				手牌
 			</div>
-			<CardItem
-				v-for="(card, index) in pokerStore.pokerhands"
-				:key="index"
-				:is-flipping="isFlipping"
-				:number="card.number"
-				:is-flip="card.isFlip"
-			/>
+			<div class="w-full flex flex-row flex-wrap justify-center">
+				<CardItem
+					v-for="(card, index) in pokerStore.pokerhands"
+					:key="index"
+					:is-flipping="isFlipping"
+					:number="card.number"
+					:is-flip="card.isFlip"
+				/>
+			</div>
+		</div>
+		<div class="h-[800px] bg-pink-600">
+			456
 		</div>
 	</div>
 </template>
