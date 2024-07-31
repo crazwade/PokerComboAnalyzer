@@ -6,7 +6,7 @@ const sortingNumber = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', '
 const numberRanking = ['A', 'K', 'Q', 'J', '10', '9', '8', '7', '6', '5', '4', '3', '2'];
 
 // 尋找同花組合 並依據黑桃>紅心>方塊>梅花 順序給牌
-export function findSameColor(hand: Hand[], getAllSet: boolean = false) {
+export function findSameSuit(hand: Hand[], getAllSet: boolean = false) {
 	// 定義各花色的計數器
 	const suits: Record<string, Hand[]> = {
 		spades: [],
