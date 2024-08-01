@@ -1,75 +1,27 @@
-# Nuxt 3 Minimal Starter
+# Demo
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+![alt text](image.png)
+![alt text](image-1.png)
 
-## Setup
+# 專案簡介
 
-Make sure to install the dependencies:
+本專案旨在展示撲克牌的排列組合與分析結果。主要分為兩個區域：
 
-```bash
-# npm
-npm install
+**展示區：**
+呈現一整副撲克牌，可透過按鈕控制所有牌面是否翻開。
+翻牌動畫效果流暢，提供視覺上的享受。
 
-# pnpm
-pnpm install
+**分析區：**
+隨機抽取 15 張牌作為手牌。
+分析手牌組合，包括同花順、同花、順子、對子同花、鐵支、葫蘆、一對、三條等。
+點擊特定組合按鈕，可展示所有符合該組合的牌型。
 
-# yarn
-yarn install
+# 技術棧
 
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- 前端框架： Nuxt.js 3
+- 狀態管理： Pinia
+- UI 框架： Nuxt UI
+- 樣式： Tailwind CSS
+- 測試： Vitest
+- 圖片處理： Nuxt Image
+- 路由： Vue Router
