@@ -89,8 +89,8 @@ const flip = () => {
 <style lang="scss" scoped>
 .card_wrap {
 	display: inline-block;
-	// width: 80px;
-	// height: 120px;
+	width: 80px;
+	height: 120px;
 	box-sizing: border-box;
 	&.selected {
 		border: 1px solid red;
