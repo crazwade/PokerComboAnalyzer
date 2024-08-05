@@ -1,10 +1,5 @@
-type Hand = {
-	number: 'A' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | 'J' | 'Q' | 'K';
-	suit: 'spades' | 'hearts' | 'diamonds' | 'clubs';
-};
-
-const sortingNumber = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
-const numberRanking = ['A', 'K', 'Q', 'J', '10', '9', '8', '7', '6', '5', '4', '3', '2'];
+import type { Hand } from './type';
+import { numberRanking, sortingNumber } from './type';
 
 export function findStraightSame(hand: Hand[], getAllSet: boolean = false) {
 	const sortRankHand = (hand: Hand[]) => {

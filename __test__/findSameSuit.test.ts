@@ -1,5 +1,5 @@
 import { test, expect } from 'vitest';
-import { findSameColor } from '../common/analysisCommon/findSameSuit';
+import { findSameSuit } from '../common/analysisCommon/findSameSuit';
 
 type Hand = {
 	number: 'A' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | 'J' | 'Q' | 'K';
@@ -43,7 +43,7 @@ const hands: Hand[] = [
 ];
 
 test('test', () => {
-	expect(findSameColor(hands01)).toStrictEqual(
+	expect(findSameSuit(hands01)).toStrictEqual(
 		[
 			{ number: '7', suit: 'spades' },
 			{ number: '8', suit: 'spades' },
@@ -52,7 +52,7 @@ test('test', () => {
 			{ number: 'A', suit: 'spades' },
 		],
 	);
-	expect(findSameColor(hands, true)).toStrictEqual([
+	expect(findSameSuit(hands, true)).toStrictEqual([
 		[
 			{ number: '2', suit: 'diamonds' },
 			{ number: '4', suit: 'diamonds' },
@@ -82,7 +82,7 @@ test('test', () => {
 			{ number: 'Q', suit: 'clubs' },
 		],
 	]);
-	expect(findSameColor(hands)).toStrictEqual(
+	expect(findSameSuit(hands)).toStrictEqual(
 		[
 			{ number: '2', suit: 'diamonds' },
 			{ number: '4', suit: 'diamonds' },
