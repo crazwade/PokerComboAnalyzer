@@ -1,4 +1,5 @@
 <script setup lang='ts'>
+import { version } from './package.json';
 import { useUserStore } from '@/stores/userStore';
 
 const userStore = useUserStore();
@@ -13,6 +14,9 @@ onMounted(() => {
 	<NuxtLayout>
 		<NuxtPage />
 	</NuxtLayout>
+	<div class="absolute top-0 right-5 text-xs opacity-15">
+		ver {{ version }}
+	</div>
 </template>
 
 <style>
