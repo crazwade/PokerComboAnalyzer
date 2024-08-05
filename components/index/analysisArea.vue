@@ -9,12 +9,15 @@ import { findSameFour } from '@/common/analysisCommon/findSameFour';
 import { findStraightSame } from '@/common/analysisCommon/findStraightSame';
 import { findFullhouse } from '@/common/analysisCommon/findFullhouse';
 import { findSameThree } from '@/common/analysisCommon/findSameThree';
+import type { Card } from '@/stores/usePoker';
+import type { Hand } from '@/common/analysisCommon/type';
 
 const pokerStore = usePokerStore();
 const isFlipping = ref<boolean>(false);
 const isSpreadOut = ref<boolean>(false);
 const colddown = ref<boolean>(false);
 const selectedCombo = ref<number>(0);
+const comboCards = ref<Card[][]>([]);
 
 const combos = [
 	{
@@ -55,6 +58,7 @@ const combos = [
 const clear = () => {
 	colddown.value = true;
 	isSpreadOut.value = false;
+	comboCards.value = [];
 	pokerStore.clearPokerHands();
 	setTimeout(() => {
 		colddown.value = false;
@@ -65,6 +69,23 @@ const flop = () => {
 	pokerStore.newPokerHands();
 	isSpreadOut.value = true;
 };
+
+watch([() => selectedCombo.value, () => isSpreadOut.value], ([val1, val2]: [number, boolean]) => {
+	const combosTmp = combos[selectedCombo.value].fun(pokerStore.combohands);
+	let comboHands: Hand[][] | null = [];
+
+	if (combosTmp === null || !val2) {
+		comboHands = [];
+		comboCards.value = [];
+		return;
+	}
+
+	comboHands = [...combos[val1].fun(pokerStore.combohands, true)];
+
+	comboCards.value = comboHands.map((hand: Hand[]) => {
+		return pokerStore.transferHandtoCard(hand);
+	});
+});
 </script>
 
 <template>
@@ -99,23 +120,41 @@ const flop = () => {
 				/>
 			</div>
 		</div>
-		<div class="">
+		<div class="w-full">
 			<UTabs
 				v-model="selectedCombo"
 				:items="combos"
 			/>
-			{{ combos[selectedCombo].value }}
+			<div
+				class="flex flex-col gap-y-2"
+			>
+				<UCard
+					v-if="comboCards.length === 0"
+					class="text-center"
+				>
+					沒有結果
+				</UCard>
+				<UCard
+					v-for="(cards, comboCardsIndex) in comboCards"
+					v-else
+					:key="comboCardsIndex"
+				>
+					<div class="w-full flex flex-row flex-wrap justify-center">
+						<CardItem
+							v-for="(card, index) in cards"
+							:key="index"
+							:is-flipping="isFlipping"
+							:number="card.number"
+							:is-flip="card.isFlip"
+						/>
+					</div>
+				</UCard>
+			</div>
 		</div>
 	</div>
 </template>
 
 <style lang="scss" scoped>
-@for $i from 1 through 15 {
-  .card#{$i} {
-    left: calc(50% - 40px + #{($i * 40 - 320)}px);
-  }
-}
-
 .cardpool {
 	transition: 1s;
 }
