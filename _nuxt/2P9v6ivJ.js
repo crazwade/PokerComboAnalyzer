@@ -1,0 +1,1 @@
+import{_ as o}from"./DfY9KPyK.js";import{_ as n}from"./DlAUqK2U.js";import{c as r,d as e,b as a,w as c,o as s}from"./B057wNOl.js";const _={};function m(i,d){const t=o;return s(),r("div",null,[e(" test page "),a(t,{to:"/",class:"text-textColor-link hover:underline hover:font-medium"},{default:c(()=>[e(" index page ")]),_:1})])}const u=n(_,[["render",m]]);export{u as default};
