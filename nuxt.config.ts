@@ -30,6 +30,7 @@ export default defineNuxtConfig({
 		configPath: './tailwind.config.cjs',
 	},
 	app: {
+		baseURL: process.env.NODE_ENV === 'development' ? '/' : '/PokerComboAnalyzer',
 		pageTransition: { name: 'page' },
 	},
 });
