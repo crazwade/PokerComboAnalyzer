@@ -46,12 +46,12 @@ const flip = () => {
 				:class="{ flip: isFlip }"
 			>
 				<Img
-					src="/image/poker/pokerBack.webp"
+					src="image/poker/pokerBack.webp"
 					fit="contain"
 					class="card_item front"
 				/>
 				<Img
-					:src="`/image/poker/${number}.webp`"
+					:src="`image/poker/${number}.webp`"
 					fit="contain"
 					class="card_item back"
 				/>
@@ -72,7 +72,7 @@ const flip = () => {
 				@click="recover"
 			/>
 			<Img
-				:src="`/image/poker/${number}.webp`"
+				:src="`image/poker/${number}.webp`"
 				fit="contain"
 				style="width: 100%; height: 100%"
 				@click="modalVisible = true"
