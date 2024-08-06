@@ -45,12 +45,12 @@ const flip = () => {
 				class="card"
 				:class="{ flip: isFlip }"
 			>
-				<NuxtImg
+				<Img
 					src="/image/poker/pokerBack.webp"
 					fit="contain"
 					class="card_item front"
 				/>
-				<NuxtImg
+				<Img
 					:src="`/image/poker/${number}.webp`"
 					fit="contain"
 					class="card_item back"
@@ -71,7 +71,7 @@ const flip = () => {
 				variant="solid"
 				@click="recover"
 			/>
-			<NuxtImg
+			<Img
 				:src="`/image/poker/${number}.webp`"
 				fit="contain"
 				style="width: 100%; height: 100%"

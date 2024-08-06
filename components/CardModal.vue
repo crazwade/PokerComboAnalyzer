@@ -70,7 +70,7 @@ const onSuccess = () => {
 						{{ getNumber(number) }}
 					</UButton>
 				</div>
-				<NuxtImg
+				<Img
 					:src="`/image/poker/${number}.webp`"
 					fit="contain"
 					width="80"
