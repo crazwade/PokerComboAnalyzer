@@ -3,7 +3,7 @@ import Header from './header.vue';
 </script>
 
 <template>
-	<div>
+	<div class="dark">
 		<Header />
 		<slot />
 	</div>
