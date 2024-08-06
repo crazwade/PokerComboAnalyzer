@@ -130,9 +130,9 @@ watch([() => selectedCombo.value, () => isSpreadOut.value], ([val1, val2]: [numb
 			>
 				<UCard
 					v-if="comboCards.length === 0"
-					class="text-center"
+					class="text-center text-white"
 				>
-					沒有結果
+					沒有匹配
 				</UCard>
 				<UCard
 					v-for="(cards, comboCardsIndex) in comboCards"
