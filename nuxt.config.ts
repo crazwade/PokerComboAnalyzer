@@ -10,7 +10,12 @@ export default defineNuxtConfig({
 		'@nuxt/ui',
 		'@nuxt/image',
 		'@nuxt/test-utils/module',
+		'@nuxtjs/tailwindcss',
+		'@nuxtjs/color-mode',
 	],
+	colorMode: {
+    preference: 'dark',
+  },
 	pinia: {
 		storesDirs: ['./stores/**', './custom-folder/stores/**'],
 	},

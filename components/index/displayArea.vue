@@ -64,7 +64,7 @@ onMounted(() => {
 				@click="flipAll"
 			/>
 		</div>
-		<div class="relative grid gap-x-2 gap-y-2 w-full grid-cols-[repeat(auto-fill,80px)] justify-center py-5">
+		<div class="relative grid gap-x-2 gap-y-2 w-full md:grid-cols-[repeat(auto-fill,80px)] grid-cols-[repeat(auto-fill,45px)] justify-center py-5">
 			<template
 				v-for="(card, index) in pokerStore.displayPool"
 				:key="index"

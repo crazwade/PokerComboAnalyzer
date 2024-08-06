@@ -38,7 +38,7 @@ const flip = () => {
 	>
 		<div
 			v-if="!selected"
-			class="card_wrap w-[45px] h-[70px] md:w-[80px] md:h-[120px]"
+			class="card_wrap md:w-[80px] md:h-[120px] w-[45px] h-[70px]"
 			@click="flip"
 		>
 			<div
@@ -60,7 +60,7 @@ const flip = () => {
 
 		<div
 			v-else
-			class="card_wrap selected relative"
+			class="card_wrap selected relative md:w-[80px] md:h-[120px] w-[45px] h-[70px]"
 		>
 			<UButton
 				class="absolute top-0 right-0"
@@ -87,10 +87,9 @@ const flip = () => {
 </template>
 
 <style lang="scss" scoped>
+
 .card_wrap {
 	display: inline-block;
-	width: 80px;
-	height: 120px;
 	box-sizing: border-box;
 	&.selected {
 		border: 1px solid red;

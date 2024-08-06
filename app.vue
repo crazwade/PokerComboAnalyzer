@@ -14,7 +14,7 @@ onMounted(() => {
 	<NuxtLayout>
 		<NuxtPage />
 	</NuxtLayout>
-	<div class="absolute top-0 right-5 text-xs opacity-15">
+	<div class="absolute top-0 right-5 text-xs opacity-15 text-white">
 		ver {{ version }}
 	</div>
 </template>
