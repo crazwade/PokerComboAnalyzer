@@ -71,7 +71,7 @@ const onSuccess = () => {
 					</UButton>
 				</div>
 				<Img
-					:src="`/image/poker/${number}.webp`"
+					:src="`image/poker/${number}.webp`"
 					fit="contain"
 					width="80"
 					class="card_item back"
