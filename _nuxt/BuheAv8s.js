@@ -1,0 +1,1 @@
+import{_ as o}from"./Djm3oCj1.js";import{n as t,o as r,c as a,b as s,H as m}from"./DIlRTSH9.js";import"./81cZWNXs.js";import"./BTfcv-Av.js";import"./CAZilBRX.js";import"./DlAUqK2U.js";import"./uAqzk_Zt.js";const n={class:"dark"},h=t({__name:"default",setup(p){return(e,c)=>(r(),a("div",n,[s(o),m(e.$slots,"default")]))}});export{h as default};
